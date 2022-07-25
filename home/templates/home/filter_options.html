@@ -1,0 +1,51 @@
+{% extends 'home/main_base.html' %}
+
+{% block style %}
+<style>
+    .all-buttons {
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        width: 50vw;
+    }
+
+    .btn-orange {
+        background-color: #fcac60;
+        color: whitesmoke;
+        font-size: 3rem;
+        border-radius: 1rem;
+    }
+
+    .btn-orange:hover {
+        color: black;
+    }
+
+    .filter-options {
+        width: 100vw;
+        height: 50vh;
+        margin-top: 10rem;
+        display: grid;
+        place-items: center;
+    } 
+
+    .filter-title {
+        color: #fcac60;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="filter-options">
+    <h2 class="filter-title">Filter by:</h2>
+    <div class="all-buttons">
+        
+        <a href="{% url 'filter-user' %}" class="btn btn-orange">User</a>
+        <a href="{% url 'filter-sport' %}" class="btn btn-orange">Sport</a>
+        <a href="{% url 'filter-location' %}" class="btn btn-orange">Location</a>
+    </div>  
+</div>
+
+{% endblock %}

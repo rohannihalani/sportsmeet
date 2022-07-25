@@ -1,0 +1,28 @@
+{% extends 'users/auth_base.html' %} 
+{% block title%}
+    SportsMeet Logout
+{% endblock %}
+{% block style %}
+    <style>
+        .login-link {
+            color: #fcac60;
+            font-size: 1.5rem;
+        }
+
+        .logout-div {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            gap: 2rem;
+        }
+
+
+    </style>
+{% endblock %}
+{% block content%}
+<div class="pt-3 logout-div">
+    <h2>You have been logged out</h2>
+    <a href="{% url 'login-page' %}" class="login-link">Login Again</a>
+</div>
+
+{% endblock content%}

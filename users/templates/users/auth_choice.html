@@ -1,0 +1,51 @@
+{% extends 'users/auth_base.html' %}
+{% block title %}
+Choose Authentication Method
+{% endblock %}
+{% block style %}
+    <style>
+        .section {
+            display: grid;
+            place-items: center;
+            gap: 3rem;
+            text-align: center;
+        }
+
+
+        .method a {
+            font-size: 3rem;
+            color: whitesmoke;
+        }
+
+
+        .method {
+            width: 20vw;
+            background-color: #fcac60;
+            border-radius: 1rem;
+            border: 1px solid #fcac60;
+        }
+
+        .method:hover {
+            transition: 0.5s;
+            background-color: whitesmoke;
+            
+        }
+
+        .method:hover a{
+            color: #fcac60;
+        }
+
+
+
+    </style>
+{% endblock %}  
+{% block content %}
+    <section class="section">
+        <div class="method">
+            <a class="btn btn-lg " href="{% url 'signup-page' %}">Sign Up</a>
+        </div>
+        <div class="method">
+            <a class="btn btn-lg" href="{% url 'login-page' %}">Login</a>
+        </div>
+    </section>  
+{% endblock %}

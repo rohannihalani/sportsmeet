@@ -1,0 +1,153 @@
+{% extends 'home/main_base.html' %}
+
+{% block style %}
+<style>
+    .input-field {
+        margin-top: 10rem;
+    }
+
+    .formy {
+        margin-top: 10rem;
+    }
+
+    .post-center {
+        display: grid;
+        place-items: center;
+        background-color: #fcac60;
+        border-radius: 1rem;
+        width: 50%;
+    }
+
+    .all-posts {
+        display: grid;
+        place-items: center;
+        margin-top: 4rem;
+    }
+
+    .entire-container {
+        margin-top: 5rem;
+    }
+
+    .individual-post {
+        margin: 1rem;
+        width: 90%;
+    }
+
+    .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+
+    }
+
+    .top a {
+        text-align: left;
+        text-transform: capitalize;
+        color: whitesmoke;
+        font-size: 2rem;
+    }
+
+    .date-time {
+        text-align: right;
+        color: whitesmoke;
+    }
+
+    .date-time p {
+        text-transform: uppercase;
+    }
+
+    .middle {
+        margin-top: 1rem;
+        color: whitesmoke;
+
+    }
+
+    .middle p {
+        margin-top: 2rem;
+    }
+
+    .bottom {
+        display: grid;
+        padding-top: 1rem;
+        grid-template-rows: 1fr 1fr;
+        color: whitesmoke;
+    }
+
+    .bottom p {
+        font-size: 0.75rem;
+    }
+
+    .date-posted {
+        margin-top: -0.5rem;
+        padding-top: -0.5rem;
+    }
+
+    .underline {
+        border: 1px solid whitesmoke;
+    }
+
+    .filter-input {
+        text-align: center;
+    }
+
+    .formy {
+        width: 100vw;
+        display: grid;
+        place-items: center;
+        gap: 0.75rem;
+        color: #fcac60;
+    }
+
+    .btn-orange {
+        background-color: #fcac60;
+        color: whitesmoke;
+    }
+
+    .btn-orange:hover {
+        color: black;
+    }
+
+
+
+
+</style>
+{% endblock %}
+
+
+
+
+{% block content %}
+    <form method="POST" class="formy">
+        {% csrf_token %}
+        Location  <input type="text" name="location" class="filter-input">
+        <button type="submit" class="btn btn-orange">Filter</button>
+    </form>
+    <div class="entire-container">
+    {% for post in posts %}
+        <div class="all-posts">
+            <article class="media content-section post-center">
+                <div class="individual-post">
+                    <div class="top">
+                        <a href="{% url 'post-detail' post.id %}">{{post.sport}}</a>
+                        <div class="date-time">
+                            <h6>{{post.date}}</h6>
+                            <p>{{post.time}}</p>
+                        </div>
+                    </div>
+                    <div class="underline"></div>
+                    <div class="middle">
+                        <h4>{{post.location}}</h4>
+                        <p>{{post.content}}</p>
+                    </div>
+                    <div class="bottom">
+                        <p>{{post.author}}</p>
+                        <p class="date-posted">{{post.date_posted|date:"F j, Y"}}</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+{% endfor %} 
+</div>
+
+    
+{% endblock %}

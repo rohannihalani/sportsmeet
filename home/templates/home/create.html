@@ -1,0 +1,47 @@
+{% extends 'home/main_base.html' %} {% load crispy_forms_tags %} 
+
+{% block style %}
+  <style>
+    .btn-orange {
+      background-color: #fcac60;
+      color: whitesmoke;
+    }
+
+    .btn-orange:hover {
+      background: white;
+      color: #fcac60;
+      transition: 0.5s;
+    }
+
+    .entire-form {
+      display: grid;
+      place-items: center;
+      height: 70vh;
+    }
+
+    .orange-container {
+      display: grid;
+      place-items: center;
+    }
+
+  </style>
+{% endblock %}
+
+
+{% block content%}
+<div class="content-section">
+  <form method="POST">
+    {% csrf_token %}
+    <table class="entire-form">
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Blog Post</legend>
+      {{ form.as_table }}
+    </fieldset>
+    
+    </table>
+    <div class="form-group orange-container">
+      <button class="btn btn-orange" type="submit">Post</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

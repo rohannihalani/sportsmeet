@@ -1,0 +1,42 @@
+{% extends 'home/main_base.html' %} 
+{% block style %}
+
+<style>
+    .confirmation-text {
+        text-align: center;
+    }
+
+    .everything {
+        display: grid;
+        place-items: center;
+        height: 90vh;
+        color: #fcac60;
+    }
+
+    .buttons {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+</style>
+{% endblock %}
+
+{% block content%}
+<div class="content-section everything">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Delete Post</legend>
+      <h2 class="confirmation-text">Are you sure you want to delete the post "{{ object.sport }}"</h2>
+    </fieldset>
+    <div class="form-group buttons">
+      <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+      <a
+        class="btn btn-outline-secondary"
+        href="{% url 'post-detail' object.id %}"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+{% endblock content%}

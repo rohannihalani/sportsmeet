@@ -1,0 +1,15 @@
+{% extends 'users/auth_base.html' %} 
+{% load crispy_forms_tags %} 
+{% block title %}
+   Edit Profile
+{% endblock %} 
+{% block content%}
+  <div class="container py-5 ml-5">
+  <h1 class="mb-3">Edit Profile</h1>
+  <form method="POST" enctype="multipart/form-data" class="mb-3" >
+    {% csrf_token %}
+    {{ u_form|crispy }}
+    <button class="btn btn-primary mt-3" type="submit">Update Profile</button>
+  </form>
+</div>
+{% endblock content%}

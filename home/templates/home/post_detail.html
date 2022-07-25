@@ -1,0 +1,112 @@
+{% extends 'home/main_base.html' %}
+{% block style %}
+<style>
+    .post-center {
+        display: grid;
+        place-items: center;
+        background-color: #fcac60;
+        border-radius: 1rem;
+        width: 50%;
+    }
+
+    .all-posts {
+        display: grid;
+        place-items: center;
+        margin-top: 4rem;
+    }
+
+    .entire-container {
+        margin-top: 5rem;
+    }
+
+    .individual-post {
+        margin: 1rem;
+        width: 90%;
+    }
+
+    .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+
+    }
+
+    .top a {
+        text-align: left;
+        text-transform: capitalize;
+        color: whitesmoke;
+        font-size: 2rem;
+    }
+
+    .date-time {
+        text-align: right;
+        color: whitesmoke;
+    }
+
+    .date-time p {
+        text-transform: uppercase;
+    }
+
+    .middle {
+        margin-top: 1rem;
+        color: whitesmoke;
+
+    }
+
+    .middle p {
+        margin-top: 2rem;
+    }
+
+    .bottom {
+        display: grid;
+        padding-top: 1rem;
+        grid-template-rows: 1fr 1fr;
+        color: whitesmoke;
+    }
+
+        .bottom p {
+            font-size: 0.75rem;
+        }
+
+        .date-posted {
+            margin-top: -0.5rem;
+            padding-top: -0.5rem;
+        }
+
+        .underline {
+            border: 1px solid whitesmoke;
+        }
+
+
+
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="entire-container">
+    <div class="all-posts">
+        <article class="media content-section post-center">
+            <div class="individual-post">
+                <div class="top">
+                    <a href="#">{{object.sport}}</a>
+                    <div class="date-time">
+                        <h6>{{object.date}}</h6>
+                        <p>{{object.time}}</p>
+                    </div>
+                </div>
+                <div class="underline"></div>
+                <div class="middle">
+                    <h4>{{object.location}}</h4>
+                    <p>{{object.content}}</p>
+                </div>
+                <div class="bottom">
+                    <p>{{object.author}}</p>
+                    <p class="date-posted">{{object.date_posted|date:"F j, Y"}}</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+{% endblock %}

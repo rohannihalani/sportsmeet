@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'home/main.css' %}" />
+    <title>SportsMeet</title>
+    <style>
+      .text-orange {
+        color: #fcac60;
+      }
+
+      .btn-orange {
+        background-color: #fab473;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md navbar-dark fixed-top"
+      style="background-color: #fcac60"
+    >
+      <a class="navbar-brand" href="{% url 'home-page' %}">SportsMeet</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link ml-4" href="#"
+              >Home<span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup-page' %}">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login-page' %}">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron mt-5">
+        <div class="container">
+          <h1 class="display-3" style="color: #fcac60">SportsMeet</h1>
+          <p style="color: #fab473">
+            Play Sports, Have Fun, Make Friends, It's That Simple.
+          </p>
+          <p>
+            <a
+              class="btn btn-lg btn-dark"
+              href="{% url 'auth_choice-page' %}"
+              role="button"
+              style="background-color: #fab473"
+              >Get Started &raquo;</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2 class="text-orange">Play Sports</h2>
+            <p class="text-orange">
+              Sign up to play sports with new people! You can either post
+              sporting events, or sign up to join some! Sports are a great way
+              to stay in shape and have fun!
+            </p>
+            <p>
+              <a class="btn btn-orange btn-dark" href="#" role="button"
+                >View Details &raquo;</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h2 class="text-orange">Have Fun</h2>
+            <p class="text-orange">
+              Sports are not only a great way to exercise, but also really fun!
+              Playing with other people will help you make new friends and have
+              fun in the process!
+            </p>
+            <p>
+              <a class="btn btn-orange btn-dark" href="#" role="button"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h2 class="text-orange">Make Friends</h2>
+            <p class="text-orange">
+              Sports have been proven to be an excellent way to make new
+              friends! Bonding over a good game of Basketball or Soccer can help
+              build friendships!
+            </p>
+            <p>
+              <a class="btn btn-orange btn-dark" href="#" role="button"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <hr />
+      </div>
+      <!-- /container -->
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    
+  </body>
+</html>
