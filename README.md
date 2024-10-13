@@ -1,0 +1,1 @@
+Sportsmeet is a web-app designed with the purpose of creating a community where people can get together and play sports. People would post on the app what sport they wanted to play and where, and people would be able to respond saying they also wanted to play.
