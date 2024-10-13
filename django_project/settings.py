@@ -135,5 +135,5 @@ TEMPLATE_DIRS = (
 CSRF_TRUSTED_ORIGINS=[]
 
 LOGIN_REDIRECT_URL = 'auth-choice'
-LOGIN_URL = 'login-page'import django_heroku
-django_heroku.settings(locals())
+# LOGIN_URL = 'login-page'import django_heroku
+# django_heroku.settings(locals())
